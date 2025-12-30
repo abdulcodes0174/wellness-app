@@ -1,0 +1,25 @@
+# Secrets / local config
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.next/
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
