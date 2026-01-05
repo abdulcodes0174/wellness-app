@@ -42,8 +42,10 @@ class UserProfile(Base):
         ),
     )
 
-    # A user can have many scheduled habit sessions
-    habit_sessions = relationship("HabitSession", back_populates="user")
+    # RELATIONSHIPS
+    
+    # A user can have many scheduled sessions
+    sessions = relationship("WellnessSession", back_populates="user")
     # Tracks a user's participation in group wellness events (planned/completed/missed/canceled)
     commitments = relationship("Commitment", back_populates="user")
 

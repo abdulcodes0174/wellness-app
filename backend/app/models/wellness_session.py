@@ -25,8 +25,9 @@ class WellnessSession(Base):
 
     # relationships (defined on the base so both HABIT/GROUP inherit them)
     location = relationship("Location", back_populates="sessions")
-    coach = relationship("CoachProfile", back_populates="habit_sessions")
-    user = relationship("UserProfile", back_populates="habit_sessions")
+    coach = relationship("CoachProfile", back_populates="sessions")
+    user = relationship("UserProfile", back_populates="sessions")
+    created_by_admin = relationship("AdminProfile", back_populates="group_events_created")
 
     __table_args__ = (
         CheckConstraint(

@@ -21,11 +21,13 @@ class CoachProfile(Base):
 
     email = Column(String(255), nullable=False, unique=True)
 
+    # RELATIONSHIPS
     # coach has one-to-many relationship to CoachAvailability
     availabilities = relationship("CoachAvailability", back_populates="coach")
 
-    # coach has one-to-many relationship to HabitSession (guided 1:1 sessions)
-    habit_sessions = relationship("HabitSession", back_populates="coach")
+    # Coach can be attached to many sessions (HABIT + GROUP)
+    sessions = relationship("WellnessSession", back_populates="coach")
+
 
     # linking to account
     account_id = Column(Integer, ForeignKey("account.account_id"), nullable=False, unique=True)
